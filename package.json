@@ -1,7 +1,7 @@
 {
   "name": "webpack-gui",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.1.0",
+  "private": false,
   "license": "WTFPL",
   "publicUrl": "",
   "scripts": {
@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "clean": "rm -rf ./build",
     "build": "npm run clean && webpack --mode production",
-    "publish": "rsync -avz --chmod=ugo=rwX --del build/ build/",
+    "publish": "rsync -avz --chmod=ugo=rwX --del 4x/ 4x/",
     "release": "npm run build && npm run publish",
     "fix": "standard --fix | snazzy",
     "analize-bundle": "NODE_ENV=production webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
