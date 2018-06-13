@@ -1,0 +1,33 @@
+* text=auto
+
+## GRAPHICS
+*.ai   binary
+*.psd  binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.svgz binary
+*.pdf  binary
+
+## FONTS
+*.ttf   binary
+*.eot   binary
+*.otf   binary
+*.woff  binary
+*.woff2 binary
+
+## AUDIO
+*.mp3  binary
+*.ogg  binary
+
+## VIDEO
+*.webm binary
+*.mp4  binary
+
+## ARCHIVES
+*.gz  binary
+*.tar binary
+*.zip binary

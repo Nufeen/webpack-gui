@@ -1,0 +1,32 @@
+.header {
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  height: 40px;
+  display: flex;
+  z-index: 2;
+  position: relative;
+  align-items: center;
+  color: #6f95db;
+  box-sizing: border-box;
+}
+
+.header svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.about {
+  padding: 10px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-left: 1%;
+  min-height: 100px;
+  display: flex;
+  z-index: 2;
+  position: relative;
+  color: grey;
+  box-sizing: border-box;
+}

@@ -1,0 +1,52 @@
+.footer {
+  height: 60px;
+  padding: 0;
+}
+
+.footer {
+  background: black;
+  color: grey;
+  font-size: 10px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer path {
+  fill: grey;
+}
+
+.footer a {
+  display: inline-block;
+  margin: 3px !important;
+}
+
+.footer a:hover path {
+  fill: brown;
+}
+
+@media (max-height: 750px) {
+  .footer {
+    display: none;
+  }
+}
+
+@media (max-height: 750px) {
+  .footer {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .footer {
+    display: none;
+  }
+}

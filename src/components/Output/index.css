@@ -1,0 +1,78 @@
+.output {
+  position: relative;
+  background: white;
+  width: 49.5%;
+  height: 100px;
+  min-height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media (max-width: 1000px) {
+  .output {
+    display: block;
+    font-size: 0.7em;
+    width: 95%;
+    margin: 0 auto;
+    height: unset;
+    min-height: unset;
+  }
+}
+
+.output .control {
+  height: calc(100% - 100px);
+}
+
+.output .textarea {
+  height: calc(100% - 0px);
+  font-size: 0.9em;
+  overflow: auto;
+}
+
+.output__buttons {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.output__button {
+  min-width: 25%;
+  margin: 7px;
+  margin-top: 20px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  margin: 0;
+}
+
+pre[class*='language-'] {
+  background: whitesmoke;
+}
+
+.output__clip:before {
+ content: 'Copied!';
+ position: absolute;
+ background: green;
+ margin-top: -40px;
+ padding: 5px;
+ pointer-events: none;
+ border-radius: 3px;
+ opacity: 0;
+}
+
+.output__clip[data-success="true"]:before {
+  animation: appear 2s forwards;
+}
+
+@keyframes appear  {
+
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,80 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  position: relative;
+  min-height: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.main {
+  position: relative;
+  height: 1px;
+  min-height: calc(100vh - 100px);
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-left: 1%;
+  padding-right: 1%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .main {
+    height: unset;
+    min-height: unset;
+  }
+}
+
+/* BULMA */
+
+.textarea,
+.textarea:not([rows]) {
+  max-height: unset;
+  resize: none;
+}
+
+.number {
+  font-size: unset;
+  height: unset;
+  margin: unset;
+  padding: unset;
+  min-width: unset;
+}
+
+/* SCROLLBARS */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: whitesmoke;
+  border: 4px solid transparent;
+  background-clip: content-box; /* THIS IS IMPORTANT */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  outline: none;
+}
+
+.output ::-webkit-scrollbar-thumb {
+  background: lightgrey;
+}
+
+.output ::-webkit-scrollbar {
+  width: 5px;
+}
