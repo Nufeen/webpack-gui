@@ -14,7 +14,10 @@ const unwrap = s => {
 }
 
 export default function generateCode(data) {
-  const deps = ''
+  const deps = data.plugins
+    .filter(x => x.active && x.npm != null)
+    .map(x => `import ${x.name} from '${x.npm}'\n`)
+    .join('')
 
   const devtool =
     data.devtool == null || data.devtool == 'none'
@@ -34,14 +37,16 @@ ${np.normalize(loadersCode, { indent: 2 })}
   },`
 
   const exports = data =>
-    `module.exports = (env, args) => ({
+    `
+${deps}
+module.exports = (env, args) => ({
   ${loaders}
   ${plugins(data)}
   devServer: ${devServer(data)}
   ${devtool}
 })`
 
-  const code = np.normalize(`${deps}\n${exports(data)}`, {
+  const code = np.normalize(`${exports(data)}`, {
     'remove-trailing': true,
     'left-trim': true,
     'remove-initial-line-feed': true,
