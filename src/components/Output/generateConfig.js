@@ -8,7 +8,9 @@ import { plugins, devServer, removeMetaData, conditionalize } from './utils'
 const np = Prism.plugins.NormalizeWhitespace
 
 const unwrap = s => {
-  return s.replace(/\'@@(\w+)@@\'/g, "args.mode == 'development' ? $1 : false")
+  return s
+    .replace(/\'@@(\w+)@@\'/g, "args.mode == 'development' ? $1 : false")
+    .replace("args.mode == 'development' \? false : false", 'false')
 }
 
 export default function generateCode(data) {

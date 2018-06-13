@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode development --open",
     "clean": "rm -rf ./build",
     "build": "npm run clean && webpack --mode production",
-    "publish": "rsync -avz --chmod=ugo=rwX --del 4x/ 4x/",
+    "publish": "rsync -avz --chmod=ugo=rwX --del dist/ 4x/",
     "release": "npm run build && npm run publish",
     "fix": "standard --fix | snazzy",
     "analize-bundle": "NODE_ENV=production webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"

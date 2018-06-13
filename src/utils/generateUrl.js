@@ -12,8 +12,8 @@ export default function updateUrl(d) {
 // Compress to flat structure containing boolean fields only
 // Everything not mentioned considered false
 function flatten(d) {
-  const DS = ''
-  const DT = ''
+  const DS = '' // TODO
+  const DT = '' // TODO
 
   const P = d.plugins
     .filter(p => p.active)

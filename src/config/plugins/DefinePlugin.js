@@ -1,8 +1,8 @@
 const chunk = `new webpack.DefinePlugin({
   DEBUG: args.mode == 'development',
   PUBLIC_URL: JSON.stringify(
-    args.mode == 'production' 
-      ? "ABSOLUTE_PATH_HERE_IF_NEEDED" 
+    args.mode == 'production'
+      ? "ABSOLUTE_PATH_HERE_IF_NEEDED"
       : ''
   ),
 })`

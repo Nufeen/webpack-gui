@@ -1,5 +1,4 @@
 import falsificate from './falsificate'
-
 import makeHash from './makeHash'
 
 function generateHashMap(d) {
@@ -65,7 +64,6 @@ export default function setValuesFromUrl(d, ls) {
   }
 
   const HMap = generateHashMap(d)
-  console.log(HMap)
 
   const S = chunks.map(x => {
     const c = HMap[x]
