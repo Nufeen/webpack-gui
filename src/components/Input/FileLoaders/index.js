@@ -2,11 +2,9 @@ import React from 'react'
 import cx from 'classnames'
 import './index.css'
 
-export default class FileTypeHandler extends React.Component {
+export default class FileLoaders extends React.Component {
   render() {
     const { __active, __doc, __name, config } = this.props.d
-
-    const { advanced } = this.props
 
     const on = cx({
       button: true,
@@ -42,17 +40,17 @@ export default class FileTypeHandler extends React.Component {
             </a>
           ))}
           <h2 className="title file__title"> {__name} </h2>
-          {config.use.map(d => (
-            <Loader
-              d={d}
-              key={d.loader}
-              advanced={advanced}
-              fileName={__name}
-              toggleOption={this.props.toggleOption}
-              toggleLoader={this.props.toggleLoader}
-              toggleFile={this.props.toggleFile}
-            />
-          ))}
+          {__active &&
+            config.use.map(d => (
+              <Loader
+                d={d}
+                key={d.loader}
+                fileName={__name}
+                toggleOption={this.props.toggleOption}
+                toggleLoader={this.props.toggleLoader}
+                toggleFile={this.props.toggleFile}
+              />
+            ))}
         </div>
       </div>
     )
@@ -61,12 +59,8 @@ export default class FileTypeHandler extends React.Component {
 
 class Loader extends React.Component {
   render() {
-    const { __active, __doc, loader, options, __advanced } = this.props.d
-    const { toggleLoader, toggleOption, fileName, advanced } = this.props
-
-    if (__advanced && !advanced) {
-      return null
-    }
+    const { __active, __doc, loader, options } = this.props.d
+    const { toggleLoader, toggleOption, fileName } = this.props
 
     return (
       <div className="loaderBlock" data-active={__active}>

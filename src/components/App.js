@@ -16,8 +16,7 @@ export default class App extends React.Component {
     super(props)
     autobind(this)
     this.state = {
-      data,
-      advanced: false
+      data
     }
   }
 
@@ -40,10 +39,6 @@ export default class App extends React.Component {
   update(data) {
     updateUrl(data)
     this.setState({ data })
-  }
-
-  toggleAdvanced() {
-    this.setState({ advanced: !this.state.advanced })
   }
 
   render() {

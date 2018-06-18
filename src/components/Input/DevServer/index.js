@@ -9,7 +9,8 @@ export default class DevServer extends React.Component {
 
     return (
       <nav className="panel input__devServer">
-        <p className="panel-heading">dev-server
+        <p className="panel-heading">
+          dev-server
           <Info link="https://webpack.js.org/configuration/dev-server/" />
         </p>
         {bools.map(option => (

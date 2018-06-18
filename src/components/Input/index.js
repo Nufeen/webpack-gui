@@ -3,7 +3,8 @@ import autobind from 'react-autobind'
 
 import html from 'react-inner-html'
 
-import FileTypeHandler from './FileTypeHandler'
+import FileLoaders from './FileLoaders'
+import Plugin from './Plugin'
 import DevServer from './DevServer'
 import SourceMaps from './SourceMaps'
 import './index.css'
@@ -67,9 +68,8 @@ export default class Input extends React.Component {
     })
   }
 
-
   render() {
-    const { data, advanced, toggleAdvanced } = this.props
+    const { data } = this.props
     return (
       <div className="inputPane">
         <nav className="panel" hidden>
@@ -77,30 +77,15 @@ export default class Input extends React.Component {
         </nav>
         <nav className="panel">
           <p className="panel-heading">loaders</p>
-          <p className="panel-tabs">
-            <a onClick={toggleAdvanced} className={advanced ? 'is-active' : ''}>
-              all
-            </a>
-            <a
-              onClick={toggleAdvanced}
-              className={!advanced ? 'is-active' : ''}
-            >
-              minimum
-            </a>
-          </p>
-          {data.loaders.map(
-            d =>
-              d.__advanced && !advanced ? null : (
-                <FileTypeHandler
-                  d={d}
-                  key={d.__name}
-                  advanced={advanced}
-                  toggleFile={this.toggleFile}
-                  toggleLoader={this.toggleLoader}
-                  toggleOption={this.toggleOption}
-                />
-              )
-          )}
+          {data.loaders.map(d => (
+            <FileLoaders
+              d={d}
+              key={d.__name}
+              toggleFile={this.toggleFile}
+              toggleLoader={this.toggleLoader}
+              toggleOption={this.toggleOption}
+            />
+          ))}
         </nav>
         <nav className="panel">
           <p className="panel-heading">plugins</p>
@@ -133,30 +118,4 @@ export default class Input extends React.Component {
       </div>
     )
   }
-}
-
-const Plugin = ({ d, togglePlugin }) => {
-  return (
-    <div className="loaderBlock" data-active={d.active}>
-      <header className="loader__header">
-        <span
-          className="panel-icon has-text-primary"
-          onClick={() => togglePlugin(d.name)}
-        >
-          <i
-            className="loader__toggle fas fa-check-circle"
-            aria-hidden="true"
-          />
-        </span>
-        {d.name}
-        {d.doc.map(link => (
-          <a className="loader__info" key={link} href={link}>
-            <span className="icon has-text-info">
-              <i className="fas fa-info-circle" />
-            </span>
-          </a>
-        ))}
-      </header>
-    </div>
-  )
 }
