@@ -10,8 +10,8 @@
     "clean": "rm -rf ./build",
     "build": "npm run clean && webpack --mode production",
     "publish": "rsync -avz --chmod=ugo=rwX --del dist/ 4x/",
-    "static": "rsync -avz --chmod=ugo=rwX --del static/ /",
-    "release": "npm run build && npm run publish && npm run static",
+    "static": "rsync -avz --chmod=ugo=rwX static/ /",
+    "release": "npm run build && npm run static && npm run publish",
     "fix": "standard --fix | snazzy",
     "analize-bundle": "NODE_ENV=production webpack --profile --json > stats.json && webpack-bundle-analyzer stats.json"
   },
