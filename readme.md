@@ -2,7 +2,7 @@
 
 Gui for generating webpack.config file. Current active brunch -- dev4x (building a config for corresponding webpack version -- 4.x.x).
 
-To be deployed soon. Preview can be found here, some features are still in development: https://admiring-keller-d92997.netlify.com/4x/
+Some features are still in development: https://webpack-config-generator.app
 
 
 ## Dev commands
