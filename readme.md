@@ -1,44 +1,22 @@
-# Webpack-gui
+# Webpack-config-generator
 
-Gui for generating webpack.config file. Current active brunch -- dev4x (building a config for corresponding webpack version -- 4.x.x).
+Gui for generating webpack.config.js file. Current active brunch -- dev4x (building a config for corresponding webpack version -- 4.x.x).
 
 Some features are still in development: https://webpack-config-generator.app
 
 
-## Dev commands
-
-```bash
-npm i
-```
-
-```bash
-npm start
-```
-
-
 ## To add your favorite loader/plugin:
 
-If you've got no time to mess around just send me the desirable config part via PM or make an issue, it's not a big deal for me to add one.
-
-Otherwise:
-
-1. Add a chunk to `src/config` folder.
-2. Use other files as a reference if you want to add metadata. It's kind of self-explainatory.
-3. Metadata is required for successful building UI, so all fields must be filled.
-4. I will most likely mark every new thing as `advanced` anyway to keep the default config as simple as possible, so it's a good option to choose by default.
+Just send me the desirable config part via PM or make an issue, I will add one.
 
 
 ## General dev info
 
 Config is generated from config chunks in `src/config` folder.
 
-Config chunks include metadata, such keys contain dashes: eg `__name`.
+Config chunks include metadata, suchch contains names, links do documentation and certain config feature state (on/off). These keys contain underscores: eg `__name`.
 
-Metadata contains names, links do documentstion and certain config feature state (on/off).
-
-This fields are excluded for output file.
-
-
+Metadata is required for successful building UI, if you prepare a chunk for a pull request, use existing chunks as a reference.
 
 
 ## Notes:
