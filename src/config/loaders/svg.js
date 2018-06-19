@@ -1,21 +1,18 @@
 const svg = {
   __name: 'svg',
   __active: false,
-  __advanced: true,
   __doc: [],
   config: {
     test: /path\.svg$/i,
     use: [
       {
         __active: true,
-        __advanced: false,
         __doc: ['https://github.com/webpack-contrib/raw-loader'],
         __npm: "raw-loader",
         loader: 'raw-loader'
       },
       {
         __active: false,
-        __advanced: false,
         __doc: [
           'https://github.com/svg/svgo',
           'https://github.com/rpominov/svgo-loader'

@@ -1,7 +1,6 @@
 const js = {
   __name: 'js',
   __active: true,
-  __advanced: false,
   __doc: [],
   config: {
     test: /\.js$/,

@@ -1,7 +1,6 @@
 const html = {
   __name: 'html',
   __active: true,
-  __advanced: false,
   __doc: [],
   config: {
     test: /\.html$/,
