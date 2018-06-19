@@ -54,3 +54,8 @@
   margin-bottom: 0.5em;
   margin-right: -10px;
 }
+
+.loader__clickable {
+  cursor: pointer;
+}
+

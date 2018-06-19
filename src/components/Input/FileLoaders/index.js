@@ -74,7 +74,12 @@ class Loader extends React.Component {
               aria-hidden="true"
             />
           </span>
-          {loader}
+          <span
+            className="loader__clickable"
+            onClick={() => toggleLoader(fileName, loader)}
+          >
+            {loader}
+          </span>
           {__doc.map(link => (
             <a className="loader__info" key={link} href={link}>
               <span className="icon has-text-info">
