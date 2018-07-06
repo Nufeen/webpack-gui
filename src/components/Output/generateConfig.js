@@ -13,6 +13,11 @@ const unwrap = s => {
     .replace("args.mode == 'development' \? false : false", 'false')
 }
 
+const defaultImports = `
+import webpack from 'webpack'
+import path from 'path'
+`
+
 export default function generateCode(data) {
   const deps = data.plugins
     .filter(x => x.active && x.npm != null)
@@ -38,6 +43,7 @@ ${np.normalize(loadersCode, { indent: 2 })}
 
   const exports = data =>
     `
+${defaultImports}
 ${deps}
 module.exports = (env, args) => ({
   ${loaders}
