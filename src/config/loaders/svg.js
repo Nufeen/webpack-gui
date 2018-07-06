@@ -3,7 +3,7 @@ const svg = {
   __active: false,
   __doc: [],
   config: {
-    test: /path\.svg$/i,
+    test: /\.svg$/i,
     use: [
       {
         __active: true,
