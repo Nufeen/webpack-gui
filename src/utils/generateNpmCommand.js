@@ -1,5 +1,5 @@
 export default function generateNpmCommand(data) {
-    const w = 'webpack webpack-dev-server'
+    const w = 'webpack webpack-cli webpack-dev-server'
 
     const p = data.plugins.reduce((acc, x) => {
       if (x.npm != null && x.active == true) {
